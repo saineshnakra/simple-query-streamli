@@ -1,10 +1,10 @@
 import streamlit as st
 from openai import OpenAI
 
-# Access the secret API key stored in Streamlit Cloud
-api_key = st.secrets["OPENAI_API_KEY"]
+# Access the secret API key from the 'default' section in st.secrets
+api_key = st.secrets["default"]["OPENAI_API_KEY"]
 
-# Pass the API key when creating the OpenAI client
+# Initialize the OpenAI client with the API key
 client = OpenAI(api_key=api_key)
 
 st.title("Simple Query with OpenAI")
